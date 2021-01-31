@@ -5,7 +5,8 @@
     "@apollo/federation": "0.21.0",
     "apollo-server": "2.19.0",
     "graphql": "15.4.0",
-    "graphql-tag": "^2.10.1"
+    "graphql-tag": "^2.10.1",
+    "patch-package": "^6.2.2"
   },
   "license": "MIT",
   "main": "index.js",

@@ -1,0 +1,14 @@
+diff --git a/node_modules/apollo-graphql/lib/schema/transformSchema.js b/node_modules/apollo-graphql/lib/schema/transformSchema.js
+index 72e49d3..85c563d 100644
+--- a/node_modules/apollo-graphql/lib/schema/transformSchema.js
++++ b/node_modules/apollo-graphql/lib/schema/transformSchema.js
+@@ -29,6 +29,9 @@ function transformSchema(schema, transformType) {
+             return new graphql_1.GraphQLUnionType(Object.assign(Object.assign({}, config), { types: () => config.types.map(replaceNamedType) }));
+         }
+         else if (graphql_1.isInputObjectType(type)) {
++            if (type.toString() === 'AdditionalEntityFields') {
++                return type;
++            }
+             const config = type.toConfig();
+             return new graphql_1.GraphQLInputObjectType(Object.assign(Object.assign({}, config), { fields: () => replaceInputFields(config.fields) }));
+         }
